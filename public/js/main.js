@@ -16,6 +16,7 @@ Array.from(studyIncomplete).forEach((el)=>{
 })
 
 async function deleteStudy(){
+    console.log('delete log',this.closest('section').dataset.id);
     const studyId = this.closest('section').dataset.id
     try{
         const response = await fetch('studies/deleteStudy', {
@@ -27,7 +28,7 @@ async function deleteStudy(){
         })
         const data = await response.json()
         console.log(data)
-        location.reload()
+        location.reload() 
     }catch(err){
         console.log(err)
     }
@@ -68,3 +69,5 @@ async function markIncomplete(){
         console.log(err)
     }
 }
+
+
