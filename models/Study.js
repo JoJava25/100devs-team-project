@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 
 const StudySchema = new mongoose.Schema({
+  dueDate: {
+    type: Date
+  },
   studyItem: {
     type: String,
     required: true,
@@ -17,6 +20,6 @@ const StudySchema = new mongoose.Schema({
     type: String,
     required: true
   }
-})
+}, { timestamps: true })
 
 module.exports = mongoose.model('Study', StudySchema)

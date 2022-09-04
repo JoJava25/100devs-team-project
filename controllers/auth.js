@@ -7,7 +7,8 @@ const User = require('../models/User')
       return res.redirect('/studies')
     }
     res.render('login', {
-      title: 'Login'
+      title: 'Login', isAuth: req.isAuthenticated(),
+    user: req.user
     })
   }
   
@@ -52,7 +53,8 @@ const User = require('../models/User')
       return res.redirect('/studies')
     }
     res.render('signup', {
-      title: 'Create Account'
+      title: 'Create Account', isAuth: req.isAuthenticated(),
+    user: req.user
     })
   }
   
@@ -69,6 +71,8 @@ const User = require('../models/User')
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
   
     const user = new User({
+      displayName: req.body.displayName,
+      studyFor: req.body.studyFor,
       userName: req.body.userName,
       email: req.body.email,
       password: req.body.password
