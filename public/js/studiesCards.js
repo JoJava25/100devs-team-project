@@ -28,7 +28,8 @@ function openModal(){
 // Open Modal on individual study cards
 function openModalCard(){    // oh my god it finally works
   console.log('open zee modal');
-  console.log(this);
+  //document.getElementById("modalDesc").value = "Description of the task";
+  //console.log(this);
   this.nextElementSibling.style.display = 'block';
     // this.lastElementChild.children[4].style.display = 'block';
 }
@@ -59,4 +60,11 @@ function outsideClickCard(e){
   for(let i = 0; i < modals.length; i++){
       if(e.target == modals[i]) {modals[i].style.display = 'none';}
   }
+}
+
+
+
+function formUpdate() {
+  let formValue = document.querySelector('#modal-input-title').value;
+  console.log(formValue);
 }
