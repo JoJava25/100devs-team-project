@@ -11,7 +11,7 @@ return str
 }
 %>
 
-<section class="studies-container mainSection flex-column">
+<section class="studies-container mainSection flex-column bg-dark text-light">
     <div class="container pt-2 d-flex justify-content-between">
         <h4>
             <%= user.displayName %> has <%= left %> 
@@ -28,7 +28,7 @@ return str
     <div class="container pt-3">
         <% if(left>0){%>
         <h3>Studies in Progress</h3>
-        <div id="note-full-container" class="note-has-grid row">
+        <div id="note-full-container" class="note-has-grid row text-dark">
 
             <% studies.filter(el=> el.completed === false).forEach( el => { %>
             <div class="col-md-4 single-note-item card-clicker">
@@ -81,7 +81,7 @@ return str
         <% if(finished>0){%>
         <!-- Completed Studies Section  -->
         <h3>Completed Studies</h3>
-        <div id="note-full-complete-container" class="note-has-grid row">
+        <div id="note-full-complete-container" class="note-has-grid row text-dark">
             <% studies.filter(el=> el.completed === true).forEach( el => { %>
             <div class="col-md-4 single-note-item card-clicker">
                 <section class="card card-body" data-id='<%=el._id%>'>
